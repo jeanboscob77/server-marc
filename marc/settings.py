@@ -26,8 +26,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For collectstatic
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # for collectstatic
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')  # If you have a local 'static' folder
