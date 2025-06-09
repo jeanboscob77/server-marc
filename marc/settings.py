@@ -20,7 +20,20 @@ import os
 from decouple import config
 import dj_database_url
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For collectstatic
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')  # If you have a local 'static' folder
+]
+
+
 
 
 # Quick-start development settings - unsuitable for production
